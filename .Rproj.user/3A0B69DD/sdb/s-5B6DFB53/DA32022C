@@ -1,0 +1,16 @@
+{
+    "contents" : "# 3-D scatterplot\nrequire(\"rgl\")\nrequire(\"RColorBrewer\")\nplot3d(vocab$YEAR,  # x variable\n       vocab$EDUCATION,   # y variable\n       vocab$VOCABULARY,  # z variable\n       xlab = \"YEAR\",\n       ylab = \"EDUCATION\",\n       zlab = \"VOCABULARY\",\n       col = rainbow(1000),\n       size = 8)",
+    "created" : 1424982083285.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3513580906",
+    "id" : "DA32022C",
+    "lastKnownWriteTime" : 1424145073,
+    "path" : "~/GitHub/DV_RProject2/03 Visualizations/plot3d.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

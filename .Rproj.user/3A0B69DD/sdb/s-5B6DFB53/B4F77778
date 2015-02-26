@@ -1,0 +1,17 @@
+{
+    "contents" : "require(\"dplyr\")\nrequire(\"tidyr\")\nhead(vocab)\n#Generates the \"Female\" and \"Male\"columns from the \"SEX\" column\nvocab %>% spread(SEX,EDUCATION) %>% tbl_df\n#Average Vocab per Education\nvocab %>% group_by(SEX) %>% summarize(Average_Education = mean(EDUCATION)) %>% tbl_df\n#Average Vocab per Sex\nvocab %>% group_by(SEX) %>% summarize(Average_Vocabulary = mean(VOCABULARY)) %>% tbl_df\n#Standard Deviation Vocab per Sex\nvocab %>% group_by(SEX) %>% summarize(Standard_Deviation_Vocabulary = sd(VOCABULARY)) %>% tbl_df\n#Average Vocabs per Education\navgPerEduc <- vocab %>% group_by(EDUCATION) %>% summarize(Average_Vocabulary_per_Education = mean(VOCABULARY))\nprint(avgPerEduc, n=21)\n#Top Vocabulary\nvocab %>% arrange(desc(VOCABULARY)) %>% tbl_df\n#Top 3 Vocab per Sex\nvocab %>% group_by(SEX) %>% arrange(desc(VOCABULARY)) %>% slice(1:10) %>% tbl_df",
+    "created" : 1424982012805.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "322030213",
+    "id" : "B4F77778",
+    "lastKnownWriteTime" : 1424982050,
+    "path" : "~/GitHub/DV_RProject3/DV_RProject3/02 Data Wrangling/Data Wrangling.R",
+    "project_path" : "02 Data Wrangling/Data Wrangling.R",
+    "properties" : {
+        "tempName" : "Untitled3"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

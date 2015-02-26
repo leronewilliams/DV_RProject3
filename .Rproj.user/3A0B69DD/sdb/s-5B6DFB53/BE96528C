@@ -1,0 +1,16 @@
+{
+    "contents" : "# use to knit 3d plots\nrequire(knitr)\nknit_hooks$set(webgl = hook_webgl)",
+    "created" : 1424982085767.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1872102159",
+    "id" : "BE96528C",
+    "lastKnownWriteTime" : 1424149608,
+    "path" : "~/GitHub/DV_RProject2/03 Visualizations/hook.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
