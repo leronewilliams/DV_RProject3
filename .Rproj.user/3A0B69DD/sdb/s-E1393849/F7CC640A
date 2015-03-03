@@ -1,0 +1,17 @@
+{
+    "contents" : "---\ntitle: \"Project3\"\nauthor: \"Nathan Waters, Lerone Williams\"\ndate: \"Tuesday, March 3, 2015\"\noutput: html_document\n---\n\nIn this R Markdown document we will display and document each step of CS329e R Project .\n\nProject Requirements <http://www.cs.utexas.edu/~cannata/dataVis/Projects/R%20Project%203/R%20Project%20Requirements.html>.\n\nIn the source folder 01 Data, the R script Access Oracle Database.R was created to connect to Dr. Cannata's Orcale database and generate a data frame from the uploaded Vocabulary.csv file. The RCurl and jsonlite package were loaded to allow general HTTP requests and process the results returned by the Web server.\n\nDescribe  joined datasets.\n\n\n```{r}\nsource(\"../01 Data/Access Oracle Database.R\", echo = TRUE)\n```\n\nA second R script  subset.R was created to display the vocab data frame that was previously created in the last step. The head(), tail(), tbl_df(), glimpse(), and summary() functions were used to return subsets of this data frame. \n\n```{r}\nsource(\"../01 Data/subset.R\", echo = TRUE)\n\n```\n\nIn this data wrangling section, several work flows are constructed using the %>% pipe operator which revealed new information about the data set.\n\n```{r}\nsource(\"../02 Data Wrangling/Data Wrangling.R\", echo = TRUE)\n```\n\nCreate these visualizations using Beautiful Plotting.\n\n```{r setup, results='asis'}\nsource(\"../03 Visualizations/hook.R\", echo = TRUE)\n```\n\n**If you do not see a spinnable 3d plot.** \n1. Navigate to the top of the page\n2. Click Open in Browser \n3. Accept the Allow blocked content warning\n4. Scroll down and you should see a spinnable 3d plot of the entire Vocabulary data set.\n**NOTE: This works for Windows**\n```{r testgl, webgl=TRUE}\nsource(\"../03 Visualizations/plot3d.R\", echo = TRUE)\n```\n\nThis is a scatterplot matrix with hotgrams along the diagonal.\n\n```{r}\nsource(\"../03 Visualizations/Matrix.R\", echo = TRUE)\n```\n\n13.Include in your html file a PNG image that shows a characterization of the categorical columns (as group by plots) and measure columns (as histograms)\n\n```{r}\nsource(\"../03 Visualizations/PNG.R\", echo = TRUE)\n```\n\n\n",
+    "created" : 1425415629082.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1650727615",
+    "id" : "F7CC640A",
+    "lastKnownWriteTime" : 1425416540,
+    "path" : "~/GitHub/DV_RProject3/DV_RProject3/00 Doc/Project3.Rmd",
+    "project_path" : "00 Doc/Project3.Rmd",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}

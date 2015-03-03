@@ -1,0 +1,17 @@
+{
+    "contents" : "# Query to build data frame\nrequire(\"RCurl\")\n### Chane vocab to new data set.\nvocab <- data.frame(eval(parse(text=substring(getURL(URLencode('http://129.152.144.84:5001/rest/native/?query=\"select * from Vocabulary\"'), httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_law229', PASS='orcl_law229', MODE='native_mode', MODEL='model', returnFor = 'R', returnDimensions = 'False'), verbose = TRUE), 1, 2^31-1)))) \n\n",
+    "created" : 1425415369905.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "142630952",
+    "id" : "807EDCB",
+    "lastKnownWriteTime" : 1424981618,
+    "path" : "~/GitHub/DV_RProject3/DV_RProject3/01 Data/dataframe.R",
+    "project_path" : "01 Data/dataframe.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
