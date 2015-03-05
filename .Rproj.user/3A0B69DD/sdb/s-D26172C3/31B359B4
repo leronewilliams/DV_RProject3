@@ -1,0 +1,17 @@
+{
+    "contents" : "require(\"dplyr\")\n#Displays first six rows\nhead()\n#Displays last six rows\ntail()\n#Converts data to tbl class. tbl's are easier to examine than data frames. R displays only the data that fits on screen\ntbl_df()\n#Information dense summary of tbl data.\nglimpse()\n#Produces a summary data for each column of the dataframe\nsummary()\n",
+    "created" : 1425585980776.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "527296620",
+    "id" : "31B359B4",
+    "lastKnownWriteTime" : 1424981919,
+    "path" : "~/GitHub/DV_RProject3/DV_RProject3/01 Data/dataframe1.R",
+    "project_path" : "01 Data/dataframe1.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

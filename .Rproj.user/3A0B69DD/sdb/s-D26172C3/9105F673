@@ -1,0 +1,17 @@
+{
+    "contents" : "library(ggvis) \nlibrary(rgdal) \nlibrary(rgeos) \nlibrary(magrittr) \nlibrary(dplyr) \nlibrary(RColorBrewer) \nlibrary(data.table) \nlibrary(maptools) \nlibrary(sp)\nlibrary(rgeos)\nlibrary(data.table)\nlibrary(chron)\nlibrary(maptools)\n\nmaine <- readOGR(\"data/maine.geojson\", \"OGRGeoJSON\") \n \nmap <- ggplot2::fortify(maine, region=\"name\") \n \n\nmap %>% \n  ggvis(~long, ~lat) %>% \n  group_by(group, id) %>% \n  layer_paths(strokeOpacity:=0.5, stroke:=\"#7f7f7f\") %>% \n  hide_legend(\"fill\") %>% \n  hide_axis(\"x\") %>% hide_axis(\"y\") %>% \n  set_options(width=400, height=600, keep_aspect=TRUE) \n",
+    "created" : 1425578855206.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "2482319182",
+    "id" : "9105F673",
+    "lastKnownWriteTime" : 1425501192,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

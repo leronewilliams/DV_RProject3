@@ -1,11 +1,14 @@
 require("dplyr")
 #Displays first six rows
-head()
+head(quake)
 #Displays last six rows
-tail()
+tail(quake)
 #Converts data to tbl class. tbl's are easier to examine than data frames. R displays only the data that fits on screen
-tbl_df()
+tbl_df(quake)
 #Information dense summary of tbl data.
-glimpse()
+glimpse(quake)
 #Produces a summary data for each column of the dataframe
-summary()
+summary(quake)
+# Compactly displays the internal structure of the dataframe
+str(quake)
+
