@@ -28,7 +28,7 @@ source("../01 Data/Subset Data.R", echo = TRUE)
 In this data wrangling section, several work flows are constructed using the %>% pipe operator which revealed new information about the data set.
 
 ```{r}
-#source("../02 Data Wrangling/Data Wrangling.R", echo = TRUE)
+source("../02 Data Wrangling/Joining Data.R", echo = TRUE)
 ```
 
 Create these visualizations using Beautiful Plotting.
