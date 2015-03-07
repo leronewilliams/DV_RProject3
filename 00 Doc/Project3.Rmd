@@ -13,6 +13,18 @@ In the source folder 01 Data, the R script Access Oracle Database.R was created 
 
 Describe  joined datasets.
 
+* The initial graph is shows the locations of earthquakes with magnitude above 4 in both the east coast and southern part of the United States
+* The picture of the red box around Oklahoma is our dataset is a visual representation of where we got our dataset for the South
+* The picture of the red box around California is our dataset is a visual representation of where we got our dataset for the East Coast
+* Next graph is a visual representation of a left join bewteen California and Oklahoma area based on Magnitude
+* Next graph is a visual representation of a right join bewteen California and Oklahoma area based on Depth
+* Next graph is a visual representation of a inner join bewteen California and Oklahoma area based on Magnitude
+* Next graph is a visual representation of a full join bewteen California and Oklahoma area based on Depth
+* Next graph is a visual representation of a semi oin bewteen California and Oklahoma area based on Magnitude
+* Next graph is a visual representation of a anti join bewteen California and Oklahoma area based on Depth
+* Next graph is a visual representation of a bind rows bewteen California and Oklahoma where the x is Latitude and Y is Longitude.  This shows in a unique way how most of the earthquakes occur in one area which is the Eastern Coast.
+
+
 
 ```{r}
 source("../01 Data/Access Oracle Database.R", echo = TRUE)
@@ -23,50 +35,31 @@ A second R script  subset.R was created to display the vocab data frame that was
 ![](./Screen1.png) 
 ![](./Screen2.png) 
 
-```{r}
+```{r echo=TRUE, warning=FALSE}
 source("../01 Data/Subset Data.R", echo = TRUE)
 
 ```
 
-In this data wrangling section, several work flows are constructed using the %>% pipe operator which revealed new information about the data set.
+In this data wrangling section, several work flows are constructed using the %>% pipe operator which revealed new information about the data set.  
 
-```{r}
+```{r echo=TRUE, warning=FALSE}
 source("../02 Data Wrangling/Joining Data.R", echo = TRUE)
 ```
 
-Create these visualizations using Beautiful Plotting.
+Here are our Beautiful Graphs.
 
-```{r setup, results='asis'}
-#source("../03 Visualizations/hook.R", echo = TRUE)
-```
+*The first graph shows the typical range and medium of magnitudes per state. Outliers are also shown. 
+*The second graph shows the number of earthquakes above magnitude 4 that have occurred since 1950 in the selected state.  This exemplifies just how many powerful earthquakes have occurred in California compared to the other states.  
 
-**If you do not see a spinnable 3d plot.** 
-1. Navigate to the top of the page
-2. Click Open in Browser 
-3. Accept the Allow blocked content warning
-4. Scroll down and you should see a spinnable 3d plot of the entire Vocabulary data set.
-**NOTE: This works for Windows**
-```{r testgl, webgl=TRUE}
-#source("../03 Visualizations/plot3d.R", echo = TRUE)
-```
-
-This is a scatterplot matrix with hotgrams along the diagonal.
-
-```{r}
+```{r echo=TRUE, warning=FALSE}
 source("../02 Data Wrangling/Data Wrangling.R", echo = TRUE)
-```
-
-
-```{r}
-#source("../03 Visualizations/Matrix.R", echo = TRUE)
 ```
 
 13.Include in your html file a PNG image that shows a characterization of the categorical columns (as group by plots) and measure columns (as histograms)
 
-```{r}
+```{r echo=TRUE, warning=FALSE}
 #source("../03 Visualizations/PNG .R", echo = TRUE)
 ```
-
-
+Below are PNG images that shows a characterization of the categorical columns (as group by plots) and measure columns (as histograms) for my main table
 ![](./categoricals.png) 
 ![](./categoricals2.png) 
