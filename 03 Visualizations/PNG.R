@@ -1,34 +1,28 @@
 require("tidyr")
 require("dplyr")
+require("RCurl")
 require("jsonlite")
-
-#From class Website:
-categoricals <- eval(parse(text=substring(getURL(URLencode('http://129.152.144.84:5001/rest/native/?query="select * from emp"'), httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_uteid', PASS='orcl_uteid', MODE='native_mode', MODEL='model', returnFor = 'R', returnDimensions = 'True'), verbose = TRUE), 1, 2^31-1)))
-
-
-q='Good'
-r <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="select * from diamonds where \\\"cut\\\" = \\\'"q"\\\'"'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521/PDB1.usuniversi01134.oraclecloud.internal',USER='DV_Diamonds',PASS='orcl',MODE='native_mode',MODEL='model',returnDimensions = 'False',returnFor = 'JSON', q=q),verbose = TRUE)))
 
 myplot <- function(df, x) {
   names(df) <- c("x", "n")
   ggplot(df, aes(x=x, y=n)) + geom_point()
 }
 
-categoricals <- eval(parse(text=substring(getURL(URLencode('http://129.152.144.84:5001/rest/native/?query="select * from diamonds"'), httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521/PDB1.usuniversi01134.oraclecloud.internal', USER='DV_Diamonds', PASS='orcl', MODE='native_mode', MODEL='model', returnFor = 'R', returnDimensions = 'True'), verbose = TRUE), 1, 2^31-1)))
+categoricals <- eval(parse(text=substring(getURL(URLencode('http://129.152.144.84:5001/rest/native/?query="select * from ABOVE4CALI"'), httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_law229', PASS='orcl_law229', MODE='native_mode', MODEL='model', returnFor = 'R', returnDimensions = 'True'), verbose = TRUE), 1, 2^31-1)))
 
-ddf <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="select * from DIAMONDS"'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521/PDB1.usuniversi01134.oraclecloud.internal',USER='DV_Diamonds',PASS='orcl',MODE='native_mode',MODEL='model',returnDimensions = 'False',returnFor = 'JSON'),verbose = TRUE)));
+eqcat <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="SELECT * FROM ABOVE4CALI"'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_law229', PASS='orcl_law229', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE)));
 
 l <- list()
-for (i in names(ddf)) { 
+for (i in names(eqcat)) { 
   if (i %in% categoricals[[1]]) {
-    r <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="select \\\""i"\\\", count(*) n from DIAMONDS group by \\\""i"\\\" "'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521/PDB1.usuniversi01134.oraclecloud.internal',USER='DV_Diamonds',PASS='orcl',MODE='native_mode',MODEL='model',returnDimensions = 'False',returnFor = 'JSON', i=i),verbose = TRUE)))
-    p <- myplot(r,i)
+    q <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="select \\\""i"\\\", count(*) n from ABOVE4CALI group by \\\""i"\\\" "'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521/PDB1.usuniversi01134.oraclecloud.internal',USER='C##cs329e_law229',PASS='orcl_law229',MODE='native_mode',MODEL='model',returnDimensions = 'False',returnFor = 'JSON', i=i),verbose = TRUE)))
+    p <- myplot(q,i)
     print(p) 
     l[[i]] <- p
   }
 }
 
-png("/Users/pcannata/Mine/UT/GitRepositories/DataVisualization/RWorkshop/00 Doc/categoricals.png", width = 25, height = 10, units = "in", res = 72)
+png("/Users/Lerone Williams/Documents/GitHub/DV_RProject3/DV_RProject3/00 Doc/categoricals.png", width = 25, height = 10, units = "in", res = 72)
 grid.newpage()
 pushViewport(viewport(layout = grid.layout(1, 12)))   
 
@@ -44,17 +38,17 @@ myplot1 <- function(df, x) {
   ggplot(df, aes(x=x)) + geom_histogram()
 }
 l <- list()
-for (i in names(ddf)) {   
+for (i in names(eqcat)) {   
   # For details on [[...]] below, see http://stackoverflow.com/questions/1169456/in-r-what-is-the-difference-between-the-and-notations-for-accessing-the
   if (i %in% categoricals[[2]]) {
-    r <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="select \\\""i"\\\" from diamonds where \\\""i"\\\" is not null "'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521/PDB1.usuniversi01134.oraclecloud.internal',USER='DV_Diamonds',PASS='orcl',MODE='native_mode',MODEL='model',returnDimensions = 'False',returnFor = 'JSON', i=i),verbose = TRUE)))
-    p <- myplot1(r,i)
+    q <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="select \\\""i"\\\" from eqcat where \\\""i"\\\" is not null "'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521/PDB1.usuniversi01134.oraclecloud.internal',USER='DV_Diamonds',PASS='orcl',MODE='native_mode',MODEL='model',returnDimensions = 'False',returnFor = 'JSON', i=i),verbose = TRUE)))
+    p <- myplot1(q,i)
     print(p) 
     l[[i]] <- p
   }
 }
 
-png("/Users/pcannata/Mine/UT/GitRepositories/DataVisualization/RWorkshop/00 Doc/categoricals2.png", width = 25, height = 20, units = "in", res = 72)
+png("/Users/Lerone Williams/Documents/GitHub/DV_RProject3/DV_RProject3/00 Doc/categoricals2.png", width = 25, height = 20, units = "in", res = 72)
 grid.newpage()
 pushViewport(viewport(layout = grid.layout(2, 12)))   
 

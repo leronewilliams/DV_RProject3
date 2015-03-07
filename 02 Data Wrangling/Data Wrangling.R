@@ -16,3 +16,7 @@ print(avgPerEduc, n=21)
 vocab %>% arrange(desc(VOCABULARY)) %>% tbl_df
 #Top 3 Vocab per Sex
 vocab %>% group_by(SEX) %>% arrange(desc(VOCABULARY)) %>% slice(1:10) %>% tbl_df
+
+
+
+

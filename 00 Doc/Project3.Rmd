@@ -19,6 +19,9 @@ source("../01 Data/Access Oracle Database.R", echo = TRUE)
 ```
 
 A second R script  subset.R was created to display the vocab data frame that was previously created in the last step. The head(), tail(), tbl_df(), glimpse(), and summary() functions were used to return subsets of this data frame. 
+ 
+![](./Screen1.png) 
+![](./Screen2.png) 
 
 ```{r}
 source("../01 Data/Subset Data.R", echo = TRUE)
@@ -60,3 +63,5 @@ This is a scatterplot matrix with hotgrams along the diagonal.
 ```
 
 
+![](./categoricals.png) 
+![](./categoricals2.png) 
