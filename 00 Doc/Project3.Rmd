@@ -64,7 +64,7 @@ source("../02 Data Wrangling/Data Wrangling.R", echo = TRUE)
 13.Include in your html file a PNG image that shows a characterization of the categorical columns (as group by plots) and measure columns (as histograms)
 
 ```{r}
-#source("../03 Visualizations/PNG .R", echo = TRUE)
+source("../03 Visualizations/PNG .R", echo = TRUE)
 ```
 
 
