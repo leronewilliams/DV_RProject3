@@ -53,6 +53,11 @@ Create these visualizations using Beautiful Plotting.
 This is a scatterplot matrix with hotgrams along the diagonal.
 
 ```{r}
+source("../02 Data Wrangling/Data Wrangling.R", echo = TRUE)
+```
+
+
+```{r}
 #source("../03 Visualizations/Matrix.R", echo = TRUE)
 ```
 
