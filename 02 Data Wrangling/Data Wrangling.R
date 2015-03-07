@@ -8,17 +8,13 @@ names(Above4cali);
 names(Recentca);
 names(Recentou);
 
-justCA <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="SELECT * FROM CLEANEDRECENTCAL "'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_law229', PASS='orcl_law229', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE)))
+justCA <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="SELECT MAG,PLACE FROM CLEANEDRECENTCAL "'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_law229', PASS='orcl_law229', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE)))
 justOU <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="SELECT MAG, PLACE FROM CLEANEDRECENTOU "'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_law229', PASS='orcl_law229', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE)))
 
-justCA
-justOU
-p2 <- justCA  %>% ggplot(aes(x=PLACE, y=MAG, color=PLACE))+geom_boxplot(); p2
-
-p2 <- ggplot(r, aes(x=x, y=n, size=legend, color=legend)) + geom_boxplot()
-
-
-
+combinedAll <- bind_rows(justCA, justOU)
+p2 <- combinedAll %>%  ggplot(aes(x=PLACE, y=MAG, color=PLACE))+geom_boxplot()
+p2 <- p2 + theme(legend.position="none") + labs(x="State", y="Magnitude") + theme(plot.title=element_text(size=20, face="bold")) + labs(title='Typical Range of Earthquakes')
+p2
 
 #working!
 above4CA <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="SELECT MAG, PLACE FROM CLEANABOVE4CALI "'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_law229', PASS='orcl_law229', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE)))
