@@ -26,6 +26,9 @@ p3 <- p3 + theme(plot.title=element_text(size=20, face="bold"))
 p4 <- above4OU  %>%  ggplot(aes(x=PLACE, color=PLACE), show_guide=FALSE)+geom_bar(stat="bin")
 p4 <- p4 + scale_y_continuous(limits=c(0,1250)) + theme(legend.position="none") + labs(x="State", y="Number of Level 4 and Above Earthquakes") + theme(plot.title=element_text(size=20, face="bold")) + labs(title='Mid-South')
 require(grid)
+
+p2
+
 pushViewport(viewport(layout=grid.layout(1,2)))
 print(p3,vp=viewport(layout.pos.row=1,layout.pos.col=1))
 print(p4,vp=viewport(layout.pos.row=1,layout.pos.col=2))
