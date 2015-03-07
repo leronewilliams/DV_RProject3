@@ -105,6 +105,7 @@ g <- g + labs(title='Cut') +
   ); g
 # Turn off the legend title (legend.title)
 g + theme(legend.title=element_blank())
+g
 # Change the styling of the legend title (legend.title)
 g + theme(legend.title=element_text(colour="chocolate",size=16,face="bold"))
 # Change the title of the legend (name), this also splits the legends
@@ -121,6 +122,7 @@ s <- g + geom_histogram(aes(x=x), show_guide=FALSE); s
 g <- ggplot(r, aes(x=x, y=n)) + geom_line(color="grey") + geom_point(color="red"); g
 g <- g + geom_line(aes(color="Important line")) + geom_point(aes(color="My points")); g
 g <- g + scale_colour_manual(name='',values=c('Important line'='red','My points'='blue')); g
+
 ### Background Colors - page 27 of the Beautiful Plots pdf
 g <- ggplot(r, aes(x=x, y=n, size=legend, color=legend)) + geom_point(); g
 # Change the panel color (panel.background)
