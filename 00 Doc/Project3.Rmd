@@ -21,7 +21,7 @@ This screen capture depicts the actual area represented in the Above4OU dataset.
 
 This screen capture depicts the actual are represented in the Above4CALI datase.
 
-![](./Screen1.png)
+![](./Screen2.png)
 
 
 A second R script Subset.R was created to display the quake data frame that was previously created in the last step. The head(), tail(), tbl_df(), glimpse(), summary(), and str() functions were used to return subsets of this data frame. 
