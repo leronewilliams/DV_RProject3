@@ -19,7 +19,7 @@ This screen capture depicts the actual area represented in the Above4OU dataset.
 
 ![](./Screen1.png) 
 
-This screen capture depicts the actual are represented in the Above4OU datase.
+This screen capture depicts the actual are represented in the Above4CALI datase.
 
 ![](./Screen1.png)
 
